@@ -321,6 +321,10 @@ section.block{
   font-family:var(--serif);font-style:italic;
   font-size:clamp(20px,2.8vw,36px);line-height:1.45;
 }
+.mogger-poster{
+  max-width:520px;margin:clamp(28px,5vw,56px) auto 0;
+}
+.mogger-poster img{width:100%;height:auto;display:block;border-radius:4px;}
 .mogger-meta{
   display:flex;justify-content:center;gap:26px;flex-wrap:wrap;
   margin-top:clamp(20px,3vw,34px);
@@ -329,8 +333,6 @@ section.block{
   color:var(--muted);
 }
 .mogger-meta .status{color:var(--red)}
-.mogger-poster{margin:clamp(30px,5vw,56px) auto 0;max-width:400px}
-.mogger-poster img{display:block;width:100%;height:auto;border:1px solid var(--line)}
 .mogger-lower{
   max-width:1120px;margin:clamp(44px,7vw,90px) auto 0;
   display:grid;grid-template-columns:1fr 1fr;
@@ -389,26 +391,43 @@ section.block{
 .teaser-frame{aspect-ratio:16/9;background:#000;overflow:hidden;border:1px solid var(--line)}
 .teaser-frame video{display:block;width:100%;height:100%;object-fit:contain;background:#000}
 
-/* Credits: billing block */
+/* Credits: IMDb-style list */
 .credits{background:#000;text-align:center}
-.billing{max-width:1080px;margin:0 auto}
-.billing-name{
-  margin:0 0 26px;
-  font:600 clamp(20px,3vw,34px) var(--cond);
-  letter-spacing:.18em;text-transform:uppercase;
-  color:var(--red);
+.credits-list{max-width:860px;margin:0 auto;text-align:left}
+.credit-item{
+  display:flex;gap:clamp(16px,2.5vw,28px);align-items:center;
+  padding:clamp(14px,2vw,22px) 0;
+  border-bottom:1px solid rgba(255,255,255,.08);
 }
-.billing-p{
+.credit-item:last-child{border-bottom:none}
+.credit-thumb{
+  flex:0 0 clamp(64px,9vw,96px);
+  width:clamp(64px,9vw,96px);aspect-ratio:2/3;
+  object-fit:cover;border-radius:3px;background:#1a1a1a;
+}
+.credit-thumb.placeholder{
+  display:flex;align-items:center;justify-content:center;
+  font:600 clamp(28px,4vw,44px) var(--display);
+  color:var(--red);text-transform:uppercase;
+}
+.credit-info{min-width:0}
+.credit-title{
+  margin:0 0 4px;
+  font:500 clamp(17px,2.2vw,24px) var(--cond);
+  letter-spacing:.04em;color:#fff;
+}
+.credit-role{
+  margin:0 0 4px;
+  font:400 clamp(14px,1.8vw,18px) var(--cond);
+  letter-spacing:.06em;color:var(--muted);
+}
+.credit-meta{
   margin:0;
-  font:400 clamp(11px,1.35vw,14.5px)/2.05 var(--cond);
-  letter-spacing:.045em;
-  text-transform:uppercase;
-  color:var(--ivory);
+  font:400 clamp(12px,1.5vw,15px) var(--cond);
+  letter-spacing:.08em;text-transform:uppercase;color:var(--muted);
 }
-.billing-p .t{color:#fff;font-weight:500}
-.billing-p .sep{color:var(--red);font-weight:400}
-.billing-p .role{color:var(--muted)}
-.imdb-cta{margin-top:clamp(30px,4vw,48px)}
+.credit-meta .sep{color:var(--red);margin:0 6px}
+.imdb-cta{margin-top:clamp(30px,4vw,48px);text-align:center}
 
 /* Contact */
 .contact-inner{
@@ -578,11 +597,11 @@ footer{
     <p class="filmmaker-line rv">A <b>Samuel Barron</b> Film</p>
     <h3 class="mogger-title rv">Mogger</h3>
     <p class="mogger-tagline rv">Are you dying to look good?</p>
+    <figure class="mogger-poster rv"><img src="assets/images/poster-mogger-final.jpg" alt="Mogger film poster" loading="lazy" /></figure>
     <div class="mogger-meta rv">
       <span>Short Film &middot; Horror-Comedy</span>
       <span class="status">In Development</span>
     </div>
-    <figure class="mogger-poster rv"><img src="assets/images/mogger-poster-final.jpg" alt="Official Mogger film poster" loading="lazy" /></figure>
     <div class="mogger-lower">
       <p class="synopsis rv">A hammer-wielding killer called The Mogger stalks the looksmaxxing scene in Los Angeles while two incompetent officers bumble the case.</p>
       <dl class="facts rv">
@@ -610,33 +629,120 @@ footer{
     </article>
   </section>
 
-  <!-- CREDITS: BILLING BLOCK -->
+  <!-- CREDITS: IMDB-STYLE LIST -->
   <section class="block credits" aria-labelledby="credits-title">
     <div class="sec-head rv">
       <p class="sec-eyebrow">Filmography</p>
       <h2 class="sec-title" id="credits-title">Credits</h2>
     </div>
-    <div class="billing rv">
-      <p class="billing-name">Samuel Eric Peter Barron</p>
-      <p class="billing-p">
-        in <span class="t">&ldquo;A Friendly Massacre&rdquo;</span> <span class="role">as Nolan</span> <span class="sep">&middot;</span> Short <span class="sep">&middot;</span> Upcoming
-        <span class="sep">&middot;</span> <span class="t">&ldquo;Undercover in the Dungeon&rdquo;</span> <span class="role">as Jackson Shepherd</span> <span class="sep">&middot;</span> TV Mini Series <span class="sep">&middot;</span> 2026
-        <span class="sep">&middot;</span> <span class="t">&ldquo;Curtain Call&rdquo;</span> <span class="role">as Theo</span> <span class="sep">&middot;</span> Short <span class="sep">&middot;</span> 2026
-        <span class="sep">&middot;</span> <span class="t">&ldquo;My CEO Loves My Voice&rdquo;</span> <span class="role">as Owen Walker</span> <span class="sep">&middot;</span> TV Series <span class="sep">&middot;</span> 2026
-        <span class="sep">&middot;</span> <span class="t">&ldquo;Strings Attached&rdquo;</span> <span class="role">as Bouncer</span> <span class="sep">&middot;</span> TV Mini Series <span class="sep">&middot;</span> 2026
-        <span class="sep">&middot;</span> <span class="t">&ldquo;Billiard Baby&rdquo;</span> <span class="role">as Vince</span> <span class="sep">&middot;</span> TV Series <span class="sep">&middot;</span> 2026
-        <span class="sep">&middot;</span> <span class="t">&ldquo;Plot Armor&rdquo;</span> <span class="role">as Fade</span> <span class="sep">&middot;</span> Short <span class="sep">&middot;</span> 2026
-        <span class="sep">&middot;</span> <span class="t">&ldquo;A Friendly Contest&rdquo;</span> <span class="role">as Cliff Booth</span> <span class="sep">&middot;</span> Short <span class="sep">&middot;</span> 2026
-        <span class="sep">&middot;</span> <span class="t">&ldquo;My Quarterback Ex Is Begging Me Back&rdquo;</span> <span class="role">as Doctor</span> <span class="sep">&middot;</span> TV Mini Series <span class="sep">&middot;</span> 2026
-        <span class="sep">&middot;</span> <span class="t">&ldquo;The Influence&rdquo;</span> <span class="role">as Thomas</span> <span class="sep">&middot;</span> TV Mini Series <span class="sep">&middot;</span> 2026
-        <span class="sep">&middot;</span> <span class="t">&ldquo;Love Is a Dangerous Dance&rdquo;</span> <span class="role">as Wady Polanski</span> <span class="sep">&middot;</span> TV Mini Series <span class="sep">&middot;</span> 2025
-        <span class="sep">&middot;</span> <span class="t">&ldquo;Cherry Girl&rdquo;</span> <span class="role">as The Evil Director</span> <span class="sep">&middot;</span> Music Video <span class="sep">&middot;</span> 2025
-        <span class="sep">&middot;</span> <span class="t">&ldquo;Trying&rdquo;</span> <span class="role">as Alex</span> <span class="sep">&middot;</span> Short <span class="sep">&middot;</span> 2021
-        <span class="sep">&middot;</span> Representative: Love Talent
-      </p>
-      <div class="imdb-cta">
-        <a class="button" href="https://www.imdb.com/name/nm11331965/" target="_blank" rel="noopener noreferrer">Full credits on IMDb <span class="arrow" aria-hidden="true">&nearr;</span></a>
+    <div class="credits-list rv">
+      <div class="credit-item">
+        <img class="credit-thumb" src="assets/images/poster-friendly-massacre.jpg" alt="A Friendly Massacre poster" loading="lazy" />
+        <div class="credit-info">
+          <h3 class="credit-title">A Friendly Massacre</h3>
+          <p class="credit-role">as Nolan</p>
+          <p class="credit-meta">Short<span class="sep">&middot;</span>Upcoming</p>
+        </div>
       </div>
+      <div class="credit-item">
+        <div class="credit-thumb placeholder" aria-hidden="true">U</div>
+        <div class="credit-info">
+          <h3 class="credit-title">Undercover in the Dungeon</h3>
+          <p class="credit-role">as Jackson Shepherd</p>
+          <p class="credit-meta">TV Mini Series<span class="sep">&middot;</span>2026</p>
+        </div>
+      </div>
+      <div class="credit-item">
+        <div class="credit-thumb placeholder" aria-hidden="true">C</div>
+        <div class="credit-info">
+          <h3 class="credit-title">Curtain Call</h3>
+          <p class="credit-role">as Theo</p>
+          <p class="credit-meta">Short<span class="sep">&middot;</span>2026</p>
+        </div>
+      </div>
+      <div class="credit-item">
+        <div class="credit-thumb placeholder" aria-hidden="true">M</div>
+        <div class="credit-info">
+          <h3 class="credit-title">My CEO Loves My Voice</h3>
+          <p class="credit-role">as Owen Walker</p>
+          <p class="credit-meta">TV Series<span class="sep">&middot;</span>2026</p>
+        </div>
+      </div>
+      <div class="credit-item">
+        <div class="credit-thumb placeholder" aria-hidden="true">S</div>
+        <div class="credit-info">
+          <h3 class="credit-title">Strings Attached</h3>
+          <p class="credit-role">as Bouncer</p>
+          <p class="credit-meta">TV Mini Series<span class="sep">&middot;</span>2026</p>
+        </div>
+      </div>
+      <div class="credit-item">
+        <img class="credit-thumb" src="assets/images/poster-billiard-baby.jpg" alt="Billiard Baby poster" loading="lazy" />
+        <div class="credit-info">
+          <h3 class="credit-title">Billiard Baby</h3>
+          <p class="credit-role">as Vince</p>
+          <p class="credit-meta">TV Series<span class="sep">&middot;</span>2026</p>
+        </div>
+      </div>
+      <div class="credit-item">
+        <img class="credit-thumb" src="assets/images/poster-plot-armor.jpg" alt="Plot Armor poster" loading="lazy" />
+        <div class="credit-info">
+          <h3 class="credit-title">Plot Armor</h3>
+          <p class="credit-role">as Fade</p>
+          <p class="credit-meta">Short<span class="sep">&middot;</span>2026</p>
+        </div>
+      </div>
+      <div class="credit-item">
+        <img class="credit-thumb" src="assets/images/poster-cliff.jpg" alt="A Friendly Contest poster" loading="lazy" />
+        <div class="credit-info">
+          <h3 class="credit-title">A Friendly Contest</h3>
+          <p class="credit-role">as Cliff Booth</p>
+          <p class="credit-meta">Short<span class="sep">&middot;</span>2026</p>
+        </div>
+      </div>
+      <div class="credit-item">
+        <div class="credit-thumb placeholder" aria-hidden="true">M</div>
+        <div class="credit-info">
+          <h3 class="credit-title">My Quarterback Ex Is Begging Me Back</h3>
+          <p class="credit-role">as Doctor</p>
+          <p class="credit-meta">TV Mini Series<span class="sep">&middot;</span>2026</p>
+        </div>
+      </div>
+      <div class="credit-item">
+        <div class="credit-thumb placeholder" aria-hidden="true">T</div>
+        <div class="credit-info">
+          <h3 class="credit-title">The Influence</h3>
+          <p class="credit-role">as Thomas</p>
+          <p class="credit-meta">TV Mini Series<span class="sep">&middot;</span>2026</p>
+        </div>
+      </div>
+      <div class="credit-item">
+        <div class="credit-thumb placeholder" aria-hidden="true">L</div>
+        <div class="credit-info">
+          <h3 class="credit-title">Love Is a Dangerous Dance</h3>
+          <p class="credit-role">as Wady Polanski</p>
+          <p class="credit-meta">TV Mini Series<span class="sep">&middot;</span>2025</p>
+        </div>
+      </div>
+      <div class="credit-item">
+        <img class="credit-thumb" src="assets/images/poster-cherry-girl.jpg" alt="Cherry Girl poster" loading="lazy" />
+        <div class="credit-info">
+          <h3 class="credit-title">Cherry Girl</h3>
+          <p class="credit-role">as The Evil Director</p>
+          <p class="credit-meta">Music Video<span class="sep">&middot;</span>2025</p>
+        </div>
+      </div>
+      <div class="credit-item">
+        <div class="credit-thumb placeholder" aria-hidden="true">T</div>
+        <div class="credit-info">
+          <h3 class="credit-title">Trying</h3>
+          <p class="credit-role">as Alex</p>
+          <p class="credit-meta">Short<span class="sep">&middot;</span>2021</p>
+        </div>
+      </div>
+    </div>
+    <div class="imdb-cta">
+      <a class="button" href="https://www.imdb.com/name/nm11331965/" target="_blank" rel="noopener noreferrer">Full credits on IMDb <span class="arrow" aria-hidden="true">&nearr;</span></a>
     </div>
   </section>
 
